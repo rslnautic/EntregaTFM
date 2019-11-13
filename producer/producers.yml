@@ -1,0 +1,30 @@
+version: '2.1'
+services:
+  prod1:
+    image: producer:latest
+    hostname: prod1
+    container_name: prod1
+    environment:
+      STOCK_FILE_NAME: "data.csv"
+    volumes:
+      - ../Stocks-aggregate:/data
+  # prod2:
+  #   image: producer:latest
+  #   hostname: prod2
+  #   container_name: prod2
+  #   environment:
+  #     STOCK_FILE_NAME: "aapl.us.txt"
+  #   volumes:
+  #     - ../Stocks:/data
+  # prod3:
+  #   image: producer:latest
+  #   hostname: prod3
+  #   container_name: prod3
+  #   environment:
+  #     STOCK_FILE_NAME: "googl.us.txt"
+  #   volumes:
+  #     - ../Stocks:/data
+networks:
+  default:
+    external:
+      name: tfm

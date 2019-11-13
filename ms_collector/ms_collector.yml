@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  collector:
+    image: ms_collector:latest
+    hostname: collector
+    container_name: collector
+networks:
+  default:
+    external:
+      name: tfm

@@ -1,0 +1,16 @@
+version: '2'
+services:
+  kafka:
+    hostname: kafka
+    image: spotify/kafka
+    container_name: kafka
+    ports:
+      - 9092:9092
+    environment:
+      ADVERTISED_PORT: 9092
+      ADVERTISED_HOST: 192.168.1.38
+    networks:
+      - tfm
+networks:
+   tfm:
+      external: true
